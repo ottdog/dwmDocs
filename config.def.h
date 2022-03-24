@@ -137,7 +137,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPause,        spawn, SHCMD("playerctl pause") },
 	{ 0, XF86XK_AudioNext,         spawn, SHCMD("playerctl next") },
 	{ 0, XF86XK_AudioPrev,         spawn, SHCMD("playerctl previous") },
-	{ 0, 0x0000FF61,               spawn, SHCMD("maim ~/Pictures/screenshot-`date +%d-%m-%Y-%T:%N`.png") },
+	{ 0, XK_Print,                 spawn, SHCMD("maim ~/Pictures/screenshot-`date +%d-%m-%Y-%T:%N`.png") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
