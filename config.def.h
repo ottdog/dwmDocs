@@ -125,9 +125,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 */	{ 0, XF86XK_MonBrightnessDown, spawn, SHCMD("light -U 10") },
 	{ 0, XF86XK_MonBrightnessUp,   spawn, SHCMD("light -A 10") },
-	{ 0, XF86XK_AudioMute,         spawn, SHCMD("amixer set Master toggle") },
-	{ 0, XF86XK_AudioRaiseVolume,  spawn, SHCMD("amixer set Master 10%+") },
-	{ 0, XF86XK_AudioLowerVolume,  spawn, SHCMD("amixer set Master 10%-") },
+	{ 0, XF86XK_AudioMute,         spawn, SHCMD("pactl set-sink-mute 0 toggle") },
+	{ 0, XF86XK_AudioRaiseVolume,  spawn, SHCMD("pactl set-sink-volume 0 +10%") },
+	{ 0, XF86XK_AudioLowerVolume,  spawn, SHCMD("pactl set-sink-volume 0 -10%") },
+	{ 0, XF86XK_AudioPlay,         spawn, SHCMD("playerctl play") },
+	{ 0, XF86XK_AudioPause,        spawn, SHCMD("playerctl pause") },
+	{ 0, XF86XK_AudioNext,         spawn, SHCMD("playerctl next") },
+	{ 0, XF86XK_AudioPrev,         spawn, SHCMD("playerctl previous") },
+	{ 0, 0x0000FF61,               spawn, SHCMD("maim ~/Pictures/screenshot-`date +%d-%m-%Y-%T:%N`.png") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
